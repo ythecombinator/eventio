@@ -1,0 +1,69 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/bundles": true,
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/bundles": true,
+  },
+  "editor.formatOnSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimit",
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 100,
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [{
+      "regex": "^(react)",
+      "orderLevel": 10,
+      "numberOfEmptyLinesAfterGroup": 0
+    },
+    {
+      "regex": "^((?!modules|pages|components|models|core|services|utils|config|[./]).)*$",
+      "orderLevel": 15,
+    },
+    {
+      "regex": "^(modules)",
+      "orderLevel": 20,
+    },
+    {
+      "regex": "^(pages)",
+      "orderLevel": 25,
+    },
+    {
+      "regex": "^(components)",
+      "orderLevel": 30,
+    },
+    {
+      "regex": "^(models)",
+      "orderLevel": 35,
+    },
+    {
+      "regex": "^(core)",
+      "orderLevel": 40,
+    },
+    {
+      "regex": "^(services)",
+      "orderLevel": 45,
+    },
+    {
+      "regex": "^(utils)",
+      "orderLevel": 50,
+    },
+    {
+      "regex": "^(config)",
+      "orderLevel": 55,
+    },
+    {
+      "regex": "^[./]",
+      "orderLevel": 60
+    }
+  ],
+  "importSorter.importStringConfiguration.spacingPerImportExpression.afterStartingBracket": 0,
+  "importSorter.importStringConfiguration.spacingPerImportExpression.beforeEndingBracket": 0,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "importSorter.sortConfiguration.joinImportPaths": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+}

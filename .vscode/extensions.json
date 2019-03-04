@@ -1,0 +1,11 @@
+{
+  "recommendations":[
+     "eg2.tslint",
+     "mike-co.import-sorter",
+     "wix.vscode-import-cost",
+     "rbbit.typescript-hero",
+     "editorconfig.editorconfig",
+     "eamodio.gitlens",
+     "bierner.color-info"
+  ]
+}
