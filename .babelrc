@@ -1,0 +1,36 @@
+{
+  "presets": ["next/babel", "@zeit/next-typescript/babel"],
+  "env": {
+    "development": {
+      "plugins": ["inline-dotenv"]
+    },
+    "production": {
+      "plugins": ["inline-dotenv"]
+    }
+  },
+  "plugins": [
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "components": "./src/components",
+          "config": "./src/config",
+          "core": "./src/core",
+          "models": "./src/models",
+          "modules": "./src/modules",
+          "pages": "./src/pages",
+          "services": "./src/services",
+          "utils": "./src/utils"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
+}

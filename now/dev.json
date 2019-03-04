@@ -1,0 +1,19 @@
+{
+   "name":"eventio",
+   "version": 1,
+   "type":"docker",
+   "features":{
+      "cloud":"v2"
+   },
+   "alias":[
+      "dev.eventio.now.sh"
+   ],
+   "files":[
+      ".next",
+      "static",
+      "server.js",
+      "routes.js",
+      "package.json",
+      "yarn.lock"
+   ]
+}
