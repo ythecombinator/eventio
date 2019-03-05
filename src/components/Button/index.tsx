@@ -1,9 +1,7 @@
 import React, {FunctionComponent, InputHTMLAttributes} from 'react';
-import styled from 'styled-components';
-
 import Spinner from 'components/Spinner';
 
-import {theme} from 'utils/theme';
+import styled, {theme} from 'utils/theme';
 
 // Utils
 
