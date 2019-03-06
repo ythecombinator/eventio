@@ -23,7 +23,7 @@ const TrooperImageView = styled.svg`
   }
 
   @media (min-width: ${queries.laptop}) {
-    top: 296px;
+    top: 250px;
     left: 341px;
     transform: translateX(0);
     width: 445px;
