@@ -9,6 +9,7 @@ export enum ButtonColor {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
+  quaternary = 'quaternary',
 }
 
 export enum ButtonSize {
@@ -28,6 +29,10 @@ const colorMapping = {
   [ButtonColor.tertiary]: {
     regular: theme.Button.tertiary.regular,
     hover: theme.Button.tertiary.hover,
+  },
+  [ButtonColor.quaternary]: {
+    regular: theme.Button.quaternary.regular,
+    hover: theme.Button.quaternary.hover,
   },
 };
 

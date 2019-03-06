@@ -15,6 +15,7 @@ export const colors = {
   darkGrayishBlueLighten: '#949ea8',
   darkGrayishBlue: '#323c46',
   veryDarkBlue: '#1c4267',
+  veryDarkGrayishBlue: '#323c46',
   white: '#ffffff',
 };
 
@@ -31,6 +32,10 @@ const theme = {
     tertiary: {
       regular: colors.grayishBlue,
       hover: colors.grayishBlueLighten,
+    },
+    quaternary: {
+      regular: colors.veryDarkGrayishBlue,
+      hover: colors.veryDarkBlue,
     },
   },
   Input: {
