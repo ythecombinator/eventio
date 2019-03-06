@@ -1,5 +1,6 @@
 const commonvars = {
   app: {
+    name: process.env.APP_NAME,
     environment: process.env.ENVIRONMENT,
     version: process.env.npm_package_version,
     commitHash: process.env.BUDDY_EXECUTION_REVISION,
