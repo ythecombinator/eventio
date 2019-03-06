@@ -1,9 +1,9 @@
 import {Store} from 'redux';
 import {SagaMiddleware} from 'redux-saga';
 
+import auth from 'modules/auth/sagas';
 import {cancel, fork, select, spawn, take} from 'redux-saga/effects';
 
-import auth from '../modules/auth/sagas';
 import app from './global/sagas';
 import {RootState, select as getState} from './rootReducer';
 

@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 
-import auth from '../modules/auth/reducers';
+import auth from 'modules/auth/reducers';
+
 import global from './global/reducers';
 
 const rootObject = {global, auth};
