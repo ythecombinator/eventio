@@ -1,3 +1,5 @@
+import {CookieParseOptions, parse} from 'cookie';
+import {IncomingMessage} from 'http';
 import {get, set} from 'js-cookie';
 
 import {getDomainFromWindow} from 'utils/url';
@@ -12,4 +14,8 @@ const getCookie = (cookie: string) => {
   return get(cookie);
 };
 
-export {setCookie, getCookie};
+const parseCookies = (req?: IncomingMessage, options: CookieParseOptions = {}) => {
+  return parse(req ? (req.headers.cookie as string) || '' : document.cookie, options);
+};
+
+export {setCookie, getCookie, parseCookies};
