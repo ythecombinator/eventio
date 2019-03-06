@@ -5,8 +5,6 @@ export {default as List} from './List';
 export {default as Loading} from './Loading';
 export {default as Visibility} from './Visibility';
 
-// Interfaces
-
 export interface IconProps {
   width?: number;
   height?: number;

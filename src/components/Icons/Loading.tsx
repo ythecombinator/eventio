@@ -1,8 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {IconProps} from './';
 
-// Components
-
 const Loading: FunctionComponent<IconProps> = (props) => {
   const {width, height, color} = props;
 

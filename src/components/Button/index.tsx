@@ -1,9 +1,9 @@
 import React, {FunctionComponent, InputHTMLAttributes} from 'react';
 import Spinner from 'components/Spinner';
 
-import styled, {theme} from 'utils/theme';
+import {theme} from 'utils/theme';
 
-// Utils
+import ButtonView from './style';
 
 export enum ButtonColor {
   primary = 'primary',
@@ -49,46 +49,11 @@ const sizeMapping = {
   },
 };
 
-// Interfaces
-
 interface ButtonProps extends InputHTMLAttributes<HTMLButtonElement> {
   dimensions: ButtonSize;
   color: ButtonColor;
   loading?: boolean;
 }
-
-interface ButtonViewProps {
-  size: {
-    width: number;
-    height: number;
-    font: number;
-  };
-  colorPalette: {
-    regular: string;
-    hover: string;
-  };
-}
-
-// Components
-
-const ButtonView = styled.button<ButtonViewProps>`
-  color: white;
-  min-height: ${(props) => `${props.size.height}px`};
-  min-width: ${(props) => `${props.size.width}px`};
-  display: flex;
-  justify-content: center;
-  background: ${(props) => props.colorPalette.regular};
-  text-transform: uppercase;
-  font-size: ${(props) => `${props.size.font}px`};
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: none;
-  border-radius: 4px;
-  :hover {
-    cursor: pointer;
-    background: ${(props) => props.colorPalette.hover};
-  }
-`;
 
 const Button: FunctionComponent<ButtonProps> = (props) => {
   const {children, onClick, disabled, dimensions, color, loading} = props;
