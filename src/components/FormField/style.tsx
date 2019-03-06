@@ -61,7 +61,7 @@ const FormField = styled.div<FormFieldViewProps>`
       }`}
   }
 
-  img {
+  svg {
     position: absolute;
     bottom: 12px;
     right: 0;
