@@ -20,9 +20,18 @@ const rotate = keyframes`
   },
 `;
 
+const queries = {
+  mobileS: '320px',
+  mobileL: '500px',
+  tablet: '768px',
+  laptop: '1300px',
+  laptopL: '1440px',
+};
+
 export const styles = {
   animation: {
     scale,
     rotate,
   },
+  queries,
 };

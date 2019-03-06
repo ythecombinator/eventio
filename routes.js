@@ -12,6 +12,11 @@ const routes = [
     page: 'events',
     pattern: '/events',
   },
+  {
+    name: 'sign-in',
+    page: 'sign-in',
+    pattern: '/sign-in',
+  },
 ];
 
 routes.forEach((route) => {

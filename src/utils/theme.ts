@@ -1,13 +1,20 @@
 import * as styledComponents from 'styled-components';
 
-const colors = {
+export const colors = {
+  limeGreenLighten: '#1be38b',
   limeGreen: '#22D486',
   limeGreenDarken: '#20BD78',
   lightPink: '#ff4081',
   lightPinkDarken: '#e73370',
+  lightGrayishBlue: '#ccd0d9',
+  lightGrayishBlue2: '#dae1e7',
+  lightGrayishBlue3: '#d2d6da',
   grayishBlue: '#c4c9d1',
+  grayishBlue2: '#c9ced3',
   grayishBlueLighten: '#d9dce1',
+  darkGrayishBlueLighten: '#949ea8',
   darkGrayishBlue: '#323c46',
+  white: '#ffffff',
 };
 
 const theme = {
@@ -28,14 +35,14 @@ const theme = {
   Input: {
     input: {
       regular: colors.darkGrayishBlue,
-      placeholder: '#c9ced3',
+      placeholder: colors.grayishBlue2,
     },
     label: {
-      regular: '#d2d6da',
+      regular: colors.lightGrayishBlue3,
       focused: colors.darkGrayishBlue,
     },
     underline: {
-      static: '#dae1e7',
+      static: colors.lightGrayishBlue2,
       focus: colors.darkGrayishBlue,
       error: colors.lightPink,
     },
@@ -46,7 +53,7 @@ const theme = {
     selected: colors.darkGrayishBlue,
   },
   UserMenu: {
-    name: '#949ea8',
+    name: colors.darkGrayishBlueLighten,
     avatar: {
       color: '#fafafa',
       backgroundColor: '#bdbdbd',

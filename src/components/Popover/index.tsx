@@ -1,7 +1,7 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent} from 'react';
 import {Tooltip} from 'react-tippy';
-import popoverStyles from 'react-tippy/dist/tippy.css';
-import styled from 'utils/theme';
+// tslint:disable-next-line: no-import-side-effect
+import 'react-tippy/dist/tippy.css';
 
 // Interfaces
 
@@ -26,25 +26,13 @@ interface PopoverProps {
 
 // Components
 
-const PopoverWrapper = styled.div`
-  ${popoverStyles}
-`;
-
 const Popover: FunctionComponent<PopoverProps> = (props) => {
   const {children, target, placement} = props;
 
   return (
-    <PopoverWrapper>
-      <Tooltip
-        html={children}
-        position={placement}
-        trigger="click"
-        theme="light"
-        interactive={true}
-      >
-        {target}
-      </Tooltip>
-    </PopoverWrapper>
+    <Tooltip html={children} position={placement} trigger="click" theme="light" interactive={true}>
+      {target}
+    </Tooltip>
   );
 };
 
