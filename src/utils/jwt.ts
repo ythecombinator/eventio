@@ -15,4 +15,17 @@ const willExpireInGivenInterval = (jwt: any, interval: number) => {
   return expiration < nextTenMinutes;
 };
 
-export {decode, willExpireInGivenInterval};
+const isExpired = (jwt: any) => {
+  const currentTime = new Date().getTime() / 1000;
+  return currentTime > jwt.exp;
+};
+
+const isValid = (jwt: any) => {
+  if (jwt) {
+    return !isExpired(jwt);
+  } else {
+    return false;
+  }
+};
+
+export {decode, willExpireInGivenInterval, isValid};
