@@ -14,6 +14,7 @@ export const colors = {
   grayishBlueLighten: '#d9dce1',
   darkGrayishBlueLighten: '#949ea8',
   darkGrayishBlue: '#323c46',
+  veryDarkBlue: '#1c4267',
   white: '#ffffff',
 };
 
