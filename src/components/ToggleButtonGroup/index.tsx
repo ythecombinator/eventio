@@ -1,19 +1,10 @@
 import React, {cloneElement, FunctionComponent, ReactElement} from 'react';
-import styled from 'utils/theme';
-
-// Interfaces
+import ToggleButtonGroupView from './style';
 
 interface ToggleButtonGroupProps {
   value: string;
   onChange: (newValue: string) => void;
 }
-
-// Components
-
-const ToggleButtonGroupView = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 const ToggleButtonGroup: FunctionComponent<ToggleButtonGroupProps> = (props) => {
   const {children, onChange, value: selectedValue} = props;

@@ -3,8 +3,6 @@ import {Tooltip} from 'react-tippy';
 // tslint:disable-next-line: no-import-side-effect
 import 'react-tippy/dist/tippy.css';
 
-// Interfaces
-
 type PopoverPlacement =
   | 'top'
   | 'top-start'
@@ -23,8 +21,6 @@ interface PopoverProps {
   placement: PopoverPlacement;
   target: JSX.Element;
 }
-
-// Components
 
 const Popover: FunctionComponent<PopoverProps> = (props) => {
   const {children, target, placement} = props;

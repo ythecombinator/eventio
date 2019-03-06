@@ -1,30 +1,13 @@
 import React, {cloneElement, FunctionComponent, ReactElement} from 'react';
-import styled, {theme} from 'utils/theme';
+import {theme} from 'utils/theme';
 
-// Interfaces
+import ToggleButtonView from './style';
 
 interface ToggleButtonProps {
   value: string;
   selected?: boolean;
   onClick?: () => void;
 }
-
-interface ToggleButtonViewProps {
-  selected: boolean;
-}
-
-// Components
-
-const ToggleButtonView = styled.div<ToggleButtonViewProps>`
-  cursor: pointer;
-  color: ${(props) =>
-    props.selected
-      ? props.theme.ToggleButton.selected
-      : props.theme.ToggleButton.regular} !important;
-  text-transform: uppercase;
-  font-size: 12px;
-  padding: 0.25em 0.5em;
-`;
 
 const ToggleButton: FunctionComponent<ToggleButtonProps> = (props) => {
   const {children, selected, onClick} = props;
