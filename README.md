@@ -61,6 +61,7 @@ npm run dev
 - [x] [Next.js](https://nextjs.org/) for _Server Side Rendering_, _prefetching_, _dynamic imports_ and other features out-of-the-box
 - [x] [Redux](http://redux.js.org/) to manage application state
 - [x] [redux-saga](https://redux-saga.js.org) as a middleware to make application side effects easier to manage
+- [x] [redux-act](https://github.com/pauldijou/redux-act) to reduce action creators boilerplate and to have a more expressive syntax for reducers
 - [x] Built with [Webpack](https://github.com/webpack/webpack)
 - [x] [Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement) for components, reducers and sagas
 - [x] Transpiled with [Babel](https://babeljs.io/)
