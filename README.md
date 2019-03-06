@@ -55,6 +55,19 @@ npm run dev
 
 🚀 Head over to [localhost:3001](http://localhost:3001) in your browser of choice.
 
+## Toolbelt
+
+- [x] [Typescript](https://www.typescriptlang.org) for compile-time safety and code scalability with _Interface oriented development_
+- [x] [Next.js](https://nextjs.org/) for _Server Side Rendering_, _prefetching_, _dynamic imports_ and other features out-of-the-box
+- [x] [Redux](http://redux.js.org/) to manage application state
+- [x] [redux-saga](https://redux-saga.js.org) as a middleware to make application side effects easier to manage
+- [x] Built with [Webpack](https://github.com/webpack/webpack)
+- [x] [Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement) for components, reducers and sagas
+- [x] Transpiled with [Babel](https://babeljs.io/)
+- [x] [styled-components](https://www.styled-components.com/) as a CSS-in-JS strategy
+- [x] [Now](https://zeit.co/now) to deploy production environment
+- [x] [Workbox](https://github.com/GoogleChrome/workbox) to generate service-worker and runtime caching
+
 ## License
 
 [eventio](https://github.com/ythecombinator/eventio) is distributed under
