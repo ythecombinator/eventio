@@ -1,7 +1,7 @@
 import {styles} from 'utils/styles';
 import styled, {colors} from 'utils/theme';
 
-const {darkGrayishBlue, darkGrayishBlueLighten, lightPink, grayishBlue2, white} = colors;
+const {darkGrayishBlue, darkGrayishBlueLighten, lightPink, grayishBlue2} = colors;
 
 const {queries} = styles;
 

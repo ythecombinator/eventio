@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent} from 'react';
 import {Tooltip} from 'react-tippy';
 // tslint:disable-next-line: no-import-side-effect
 import 'react-tippy/dist/tippy.css';
