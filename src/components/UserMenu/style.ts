@@ -1,4 +1,4 @@
-import styled, {theme} from 'utils/theme';
+import styled from 'utils/theme';
 
 const UserMenuNameView = styled.p`
   color: ${(props) => props.theme.UserMenu.name};
@@ -40,7 +40,7 @@ const UserMenuMainContent = styled.div`
 `;
 
 const UserMenuButton = styled.button`
-  color: ${theme.UserMenu.button};
+  color: ${(props) => props.theme.UserMenu.button};
   display: inline-block;
   border: none;
   padding: 0.5rem;
