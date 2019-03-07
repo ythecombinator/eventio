@@ -6,6 +6,7 @@ import {call, fork, put, takeLatest} from 'redux-saga/effects';
 
 import {getCookie, setCookie} from 'utils/cookies';
 import {decode, willExpireInGivenInterval} from 'utils/jwt';
+import server from 'utils/server';
 
 import {actions} from './actions';
 import {UserCredentials} from './models';
@@ -21,6 +22,7 @@ function* checkTokenExpiration() {
       if (isAboutToExpire) {
         const response = yield call(authenticate, {refreshToken});
         yield call(setCookie, 'authenticationToken', response.headers.authorization);
+        server.defaults.headers.common.APIKey = response.headers.authorization;
       }
     }
 
@@ -34,9 +36,10 @@ function* signIn(action: Action<UserCredentials>) {
   try {
     const response = yield call(authenticate, payload);
     yield call(setCookie, 'authenticationToken', response.headers.authorization);
+    server.defaults.headers.common.APIKey = response.headers.authorization;
     yield call(setCookie, 'refreshToken', response.headers['refresh-token']);
     yield put(actions.signIn.success(response.data));
-    yield call(Router.push, '/dashboard');
+    yield call(Router.push, '/events');
   } catch (err) {
     yield put(actions.signIn.failure(err));
   }
