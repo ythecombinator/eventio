@@ -1,11 +1,24 @@
 import dayjs from 'dayjs';
 import * as decodeToken from 'jwt-decode';
 
-const decode = (token: string) => {
+import {User} from 'modules/auth/models';
+
+interface JWT {
+  user: {
+    _id: string;
+    __v: number;
+    candidateId: string;
+  } & Pick<User, 'firstName' | 'lastName' | 'email' | 'id'>;
+  iat: number;
+  exp: number;
+  iss: string;
+}
+
+const decode = (token: string): JWT => {
   try {
     return decodeToken(token);
   } catch (error) {
-    return undefined;
+    return null;
   }
 };
 
