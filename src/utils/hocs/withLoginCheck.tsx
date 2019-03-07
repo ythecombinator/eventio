@@ -19,7 +19,7 @@ const withLoginCheck = <P extends WithLoginCheckProps>(Page: NextPage<P>) =>
       const authenticationToken = parseCookies(req).authenticationToken;
       if (isValid(authenticationToken)) {
         res.writeHead(302, {
-          Location: '/dashboard',
+          Location: '/events',
         });
         res.end();
       }
