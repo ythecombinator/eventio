@@ -1,6 +1,9 @@
+import reset from 'styled-reset';
+
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  ${reset}
   * { box-sizing: border-box; }
   a { text-decoration: none; }
 
