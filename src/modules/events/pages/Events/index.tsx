@@ -3,6 +3,8 @@ import {compose} from 'redux';
 
 import Head from 'next/head';
 
+import {withLoginCheck} from 'utils/hocs';
+
 import config from 'config/environment';
 
 import connect, {MappedProps} from './Connector';
@@ -29,4 +31,7 @@ class Events extends Component<Props> {
   }
 }
 
-export default compose(connect)(Events);
+export default compose(
+  withLoginCheck({shouldBeLogged: true}),
+  connect,
+)(Events);

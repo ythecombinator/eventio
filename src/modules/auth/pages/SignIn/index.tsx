@@ -115,6 +115,6 @@ class Login extends Component<Props, State> {
 }
 
 export default compose(
-  withLoginCheck,
+  withLoginCheck({shouldBeLogged: false}),
   connect,
 )(Login);
