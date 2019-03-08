@@ -21,7 +21,7 @@
       "numberOfEmptyLinesAfterGroup": 0
     },
     {
-      "regex": "^((?!modules|pages|components|models|core|services|utils|config|[./]).)*$",
+      "regex": "^((?!modules|pages|layouts|components|models|core|services|utils|config|[./]).)*$",
       "orderLevel": 15,
     },
     {
@@ -31,6 +31,10 @@
     {
       "regex": "^(pages)",
       "orderLevel": 25,
+    },
+    {
+      "regex": "^(layouts)",
+      "orderLevel": 30,
     },
     {
       "regex": "^(components)",

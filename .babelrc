@@ -18,6 +18,7 @@
           "components": "./src/components",
           "config": "./src/config",
           "core": "./src/core",
+          "layouts": "./src/layouts",
           "models": "./src/models",
           "modules": "./src/modules",
           "pages": "./src/pages",
