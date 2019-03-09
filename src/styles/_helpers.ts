@@ -2,9 +2,9 @@ import {css} from 'styled-components';
 
 const helpers = css`
   .row:after,
-  .cols-4 .col:after,
-  .cols-3 .col:after,
-  .cols-2 .col:after {
+  .columns-4 .column:after,
+  .columns-3 .column:after,
+  .columns-2 .column:after {
     display: table;
     clear: both;
     content: '';

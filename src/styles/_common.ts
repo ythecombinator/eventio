@@ -24,6 +24,7 @@ const common = css`
     position: relative;
     padding: 0 60px;
   }
+
   @media (max-width: 1000px) {
     .container {
       padding: 0 60px;
@@ -57,7 +58,7 @@ const common = css`
   .form-wrapper .Button {
     margin-top: 30px;
   }
-  .form-wrapper .Header-msg {
+  .form-wrapper .Header-message {
     display: none;
   }
   .form-wrapper .form-inputs {
@@ -67,7 +68,7 @@ const common = css`
     .form-wrapper {
       margin-top: 0;
     }
-    .form-wrapper .Header-msg {
+    .form-wrapper .Header-message {
       display: block;
     }
   }
