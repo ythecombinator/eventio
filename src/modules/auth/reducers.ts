@@ -24,6 +24,18 @@ export default createReducer<typeof initialState>({}, initialState)
     ...state,
     error: payload,
     loading: false,
+  }))
+  .on(actions.signOut.request, (state) => ({
+    ...state,
+    loading: true,
+  }))
+  .on(actions.signOut.success, () => ({
+    ...initialState,
+  }))
+  .on(actions.signOut.failure, (state, payload) => ({
+    ...state,
+    error: payload,
+    loading: false,
   }));
 
 export type InitialState = typeof initialState;
