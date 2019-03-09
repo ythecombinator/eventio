@@ -1,0 +1,84 @@
+version: 2
+
+jobs:
+  lint_js:
+    docker:
+      - image: ythecombinator/ci-node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run: yarn lint
+
+  deploy_staging:
+    docker:
+      - image: picter/ci-node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Build and deploy project
+          command: |
+            yarn build
+            yarn deploy
+    environment:
+      - NOW_ENV: 'stg'
+
+  deploy_production:
+    docker:
+      - image: ythecombinator/ci-node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - save_cache:
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Build and deploy project
+          command: |
+            yarn build
+            yarn deploy
+    environment:
+      - NOW_ENV: 'prod'
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - lint_js
+      - deploy_staging:
+          context: eventio
+          requires:
+            - lint_js
+          filters:
+            branches:
+              only: master
+      - deploy_production:
+          context: eventio
+          requires:
+            - lint_js
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
