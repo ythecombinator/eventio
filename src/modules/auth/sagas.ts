@@ -22,6 +22,7 @@ function* init() {
   if (isEmpty(user) && isValid(token)) {
     const decodedToken = decode(token);
     const {candidateId, ...userData} = decodedToken.user;
+    server.defaults.headers.common.Authorization = token;
     yield put(actions.signIn.success(userData));
   }
 }
@@ -36,7 +37,7 @@ function* checkTokenExpiration() {
       if (isAboutToExpire) {
         const response = yield call(authenticate, {refreshToken});
         yield call(setCookie, 'authenticationToken', response.headers.authorization);
-        server.defaults.headers.common.APIKey = response.headers.authorization;
+        server.defaults.headers.common.Authorization = response.headers.authorization;
       }
     }
 
@@ -50,7 +51,7 @@ function* signIn(action: Action<UserCredentials>) {
   try {
     const response = yield call(authenticate, payload);
     yield call(setCookie, 'authenticationToken', response.headers.authorization);
-    server.defaults.headers.common.APIKey = response.headers.authorization;
+    server.defaults.headers.common.Authorization = response.headers.authorization;
     yield call(setCookie, 'refreshToken', response.headers['refresh-token']);
     yield put(actions.signIn.success(response.data));
     yield call(Router.push, '/events');
