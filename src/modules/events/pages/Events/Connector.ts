@@ -15,6 +15,8 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       list: eventsActions.list.request,
+      join: eventsActions.attend.request,
+      leave: eventsActions.unattend.request,
       logout: authActions.signOut.request,
     },
     dispatch,
