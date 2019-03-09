@@ -1,21 +1,21 @@
 import {ChangeEvent, Component, FormEvent} from 'react';
 import {compose} from 'redux';
 
+import Form from 'modules/auth/components/Form';
+import FormField from 'modules/auth/components/FormField';
 import Head from 'next/head';
 import Link from 'next/link';
 
 import Button, {ButtonColor, ButtonSize} from 'components/Button';
-import Form from 'components/Form';
-import FormField from 'components/FormField';
 import {Visibility} from 'components/Icons';
 import LeftPanel from 'components/LeftPanel';
-import Logo from 'components/Logo';
-
-import {withLoginCheck} from 'utils/hocs';
+import RightHeader from 'components/RightHeader';
+import {withLoginCheck} from 'hocs';
 
 import config from 'config/environment';
 
 import connect, {MappedProps} from './Connector';
+import {SignUpView} from './style';
 
 const appName = config.settings.app.name;
 
@@ -67,11 +67,18 @@ class Login extends Component<Props, State> {
           <title>{appName} | Sign In</title>
         </Head>
 
-        <Logo color="light" />
-
         <LeftPanel />
+        <RightHeader>
+          <SignUpView>
+            <Link href="sign-up">
+              <p>
+                Don’t have account? <strong>Sign up</strong>
+              </p>
+            </Link>
+          </SignUpView>
+        </RightHeader>
 
-        <Form onSubmit={this.handleOnSubmit} error={error} noValidate>
+        <Form onSubmit={this.handleOnSubmit} error={error} noValidate headerGap>
           <h1>Sign in to Eventio.</h1>
           <p>{error ? error : 'Enter your details below.'}</p>
 
@@ -87,7 +94,6 @@ class Login extends Component<Props, State> {
 
           <FormField value={this.state.password} error={error}>
             <input
-              className="passwordInput"
               name="password"
               type={this.getPasswordView()}
               value={this.state.password}
@@ -96,15 +102,6 @@ class Login extends Component<Props, State> {
             <label>Password</label>
             <Visibility width={22} height={16} color="#E1E4E6" onClick={this.togglePasswordView} />
           </FormField>
-
-          <div className="signup-link">
-            <Link href="sign-up">
-              <p>
-                Don’t have account? <strong>Sign up</strong>
-              </p>
-            </Link>
-          </div>
-
           <Button dimensions={ButtonSize.large} color={ButtonColor.primary} loading={loading}>
             Sign in
           </Button>
