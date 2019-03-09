@@ -1,14 +1,18 @@
 import React from 'react';
-import LeftPanelView from './style';
+import Logo from 'components/Logo';
+
+import {AuthorView, LeftPanelView, QuoteBoxView, QuoteView} from './style';
 
 const LeftPanel = () => {
   return (
     <LeftPanelView>
-      <div className="quote-box">
-        <p className="quote">“Great, kid. Don’t get cocky.”</p>
+      <Logo color="light" />
+
+      <QuoteBoxView>
+        <QuoteView>“Great, kid. Don’t get cocky.”</QuoteView>
         <span />
-        <p className="author">Han Solo</p>
-      </div>
+        <AuthorView>Han Solo</AuthorView>
+      </QuoteBoxView>
     </LeftPanelView>
   );
 };
