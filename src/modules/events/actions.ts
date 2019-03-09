@@ -1,6 +1,12 @@
 import {createAction} from 'redux-act';
 
+import {User} from 'modules/auth/models';
+
 import {Event} from './models';
+
+export type EventAttendenceRequest = {id: string; currentUser: User};
+
+export type EventAttendenceError = {err: Error; prevState: Event[]};
 
 const list = {
   request: createAction('events/LIST_REQUEST'),
@@ -9,15 +15,15 @@ const list = {
 };
 
 const attend = {
-  request: createAction<string>('events/ATTEND_REQUEST'),
+  request: createAction<EventAttendenceRequest>('events/ATTEND_REQUEST'),
   success: createAction('events/ATTEND_SUCCESS'),
-  failure: createAction<Error>('events/ATTEND_FAILURE'),
+  failure: createAction<EventAttendenceError>('events/ATTEND_FAILURE'),
 };
 
 const unattend = {
-  request: createAction<string>('events/UNATTEND_REQUEST'),
+  request: createAction<EventAttendenceRequest>('events/UNATTEND_REQUEST'),
   success: createAction('events/UNATTEND_SUCCESS'),
-  failure: createAction<Error>('events/UNATTEND_FAILURE'),
+  failure: createAction<EventAttendenceError>('events/UNATTEND_FAILURE'),
 };
 
 export const actions = {

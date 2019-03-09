@@ -11,3 +11,14 @@ export interface Event {
   createdAt: string;
   updatedAt: string;
 }
+
+export enum EventTypes {
+  all = 'ALL EVENTS',
+  future = 'FUTURE EVENTS',
+  past = 'PAST EVENTS',
+}
+
+export enum ViewTypes {
+  grid = 'grid',
+  list = 'list',
+}
