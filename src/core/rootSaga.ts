@@ -3,20 +3,17 @@ import {SagaMiddleware} from 'redux-saga';
 
 import auth from 'modules/auth/sagas';
 import events from 'modules/events/sagas';
-import {cancel, fork, select, spawn, take} from 'redux-saga/effects';
+import {cancel, fork, select, take} from 'redux-saga/effects';
 
-import app from './global/sagas';
 import {RootState, select as getState} from './rootReducer';
 
-const globalSagas = [app];
-const pagesSagas = [auth, events];
+const modulesSagas = [auth, events];
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 const CANCEL_SAGAS_HMR = 'CANCEL_SAGAS_HMR';
 
 function* rootSaga() {
-  yield globalSagas.map((saga) => spawn(saga));
-  yield pagesSagas.map((saga) => fork(saga));
+  yield modulesSagas.map((saga) => fork(saga));
 }
 
 function createAbortableSaga(saga: any) {

@@ -3,9 +3,7 @@ import {combineReducers} from 'redux';
 import auth from 'modules/auth/reducers';
 import events from 'modules/events/reducers';
 
-import global from './global/reducers';
-
-const rootObject = {global, auth, events};
+const rootObject = {auth, events};
 
 export type RootState = {readonly [P in keyof typeof rootObject]: ReturnType<typeof rootObject[P]>};
 
