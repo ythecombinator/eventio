@@ -1,17 +1,26 @@
 import {styles} from 'utils/styles';
-import styled, {colors} from 'utils/theme';
+import styled, {colors, css} from 'utils/theme';
 
 const {darkGrayishBlue, darkGrayishBlueLighten, lightPink, grayishBlue2} = colors;
 
 const {queries} = styles;
 
+const headerGap = css`
+  padding-top: 120px;
+`;
+
+const noHeaderGap = css`
+  padding-top: 0;
+`;
+
 interface FormViewProps {
   error: string;
+  headerGap?: boolean;
 }
 
 const FormView = styled.form<FormViewProps>`
-  position: relative;
-  top: 114px;
+  ${headerGap}
+
   width: calc(100% - 48px);
   margin: 0 auto;
   text-align: center;
@@ -36,23 +45,6 @@ const FormView = styled.form<FormViewProps>`
     margin-top: 48px;
   }
 
-  .signup-link {
-    display: inline-block;
-    color: ${grayishBlue2};
-    margin-top: 16px;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1.71;
-    &:hover {
-      text-decoration: underline;
-    }
-    strong {
-      color: ${darkGrayishBlueLighten};
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-  }
-
   @media (min-width: ${queries.mobileL}) {
     width: 450px;
   }
@@ -70,6 +62,7 @@ const FormView = styled.form<FormViewProps>`
   }
 
   @media (min-width: ${queries.laptop}) {
+    ${noHeaderGap}
     position: absolute;
     top: 200px;
     left: 719px;
@@ -77,13 +70,6 @@ const FormView = styled.form<FormViewProps>`
 
     h1 {
       padding-bottom: 6px;
-    }
-
-    .signup-link {
-      position: fixed;
-      top: 40px;
-      right: 39px;
-      margin-top: 0;
     }
 
     button {
