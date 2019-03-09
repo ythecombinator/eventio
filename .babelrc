@@ -18,11 +18,13 @@
           "components": "./src/components",
           "config": "./src/config",
           "core": "./src/core",
+          "hocs": "./src/hocs",
           "layouts": "./src/layouts",
           "models": "./src/models",
           "modules": "./src/modules",
           "pages": "./src/pages",
           "services": "./src/services",
+          "styles": "./src/styles",
           "utils": "./src/utils"
         }
       }
