@@ -5,7 +5,6 @@ const withProgressBar = require('next-progressbar');
 const withOffline = require('next-offline');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-const withCSS = require('@zeit/next-css');
 
 const {resolve} = require('path');
 
@@ -50,6 +49,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [[withProgressBar], [withTypescript], [withBundleAnalyzer], [withOffline], [withCSS]],
+  [[withProgressBar], [withTypescript], [withBundleAnalyzer], [withOffline]],
   nextConfig,
 );

@@ -1,7 +1,3 @@
-import {column, helpers} from 'styles';
-
-import {css} from 'styled-components';
-
 import styled from 'utils/theme';
 
 const ListView = styled.div`
