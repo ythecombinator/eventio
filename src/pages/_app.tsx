@@ -41,7 +41,7 @@ class App extends NextApp<Props> {
         </Head>
         <Provider store={store}>
           <ThemeProvider theme={theme}>
-            <Layout {...this.props}>
+            <Layout>
               <Component {...pageProps} />
             </Layout>
           </ThemeProvider>

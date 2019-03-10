@@ -11,6 +11,7 @@ const LogoView = styled.svg`
   width: 30px;
   height: 30px;
   fill: ${darkGrayishBlue};
+  z-index: 200;
 
   @media (min-width: ${styles.queries.laptop}) {
     top: 39px;

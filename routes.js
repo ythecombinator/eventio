@@ -3,7 +3,7 @@ const router = (module.exports = nextRoutes());
 
 const routes = [
   {
-    name: 'home',
+    name: 'dashboard',
     page: 'events',
     pattern: '/',
   },

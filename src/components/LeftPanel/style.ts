@@ -15,40 +15,39 @@ const LeftPanelView = styled.div`
   background: url('../static/images/trooper.png'), ${darkGrayishBlue};
   background-size: cover, cover;
   text-align: center;
-  z-index: -1;
-
-  .quote-box {
-    position: absolute;
-    bottom: 86px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 310px;
-
-    .quote {
-      color: ${white};
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      line-height: 1.5;
-    }
-
-    span {
-      display: block;
-      background: ${limeGreenLighten};
-      width: 12px;
-      height: 2px;
-      margin: 21px auto 15px auto;
-    }
-
-    .author {
-      color: ${darkGrayishBlueLighten};
-      font-size: 18px;
-      line-height: 1.33;
-    }
-  }
 
   @media (min-width: ${styles.queries.laptop}) {
     display: block;
   }
 `;
 
-export default LeftPanelView;
+const QuoteBoxView = styled.div`
+  position: absolute;
+  bottom: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 310px;
+
+  span {
+    display: block;
+    background: ${limeGreenLighten};
+    width: 12px;
+    height: 2px;
+    margin: 21px auto 15px auto;
+  }
+`;
+
+const QuoteView = styled.p`
+  color: ${white};
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 1.5;
+`;
+
+const AuthorView = styled.p`
+  color: ${darkGrayishBlueLighten};
+  font-size: 18px;
+  line-height: 1.33;
+`;
+
+export {LeftPanelView, QuoteBoxView, QuoteView, AuthorView};

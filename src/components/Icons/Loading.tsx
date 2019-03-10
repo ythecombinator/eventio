@@ -5,7 +5,7 @@ const Loading: FunctionComponent<IconProps> = (props) => {
   const {width, height, color} = props;
 
   return (
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} {...props}>
+    <svg width={width} height={height} viewBox={`0 0 27 27`} {...props}>
       <path
         fill={color}
         // tslint:disable-next-line: max-line-length

@@ -1,19 +1,24 @@
-import React, {Fragment} from 'react';
-import {loadFonts} from 'utils/fonts';
+import React, {FunctionComponent} from 'react';
+import Header from 'components/Header';
 
+import {loadFonts} from 'utils/fonts';
+import {isEmpty} from 'utils/object';
+
+import connect, {MappedProps} from './Connector';
 import {GlobalStyles} from './style';
 
-const Layout = (props) => {
-  const {children} = props;
+const Layout: FunctionComponent<MappedProps> = (props) => {
+  const {children, user, logout} = props;
 
   loadFonts();
 
   return (
-    <Fragment>
+    <>
       <GlobalStyles />
       {children}
-    </Fragment>
+      <Header setLogout={logout} user={user} auth={!isEmpty(user)} />
+    </>
   );
 };
 
-export default Layout;
+export default connect(Layout);
