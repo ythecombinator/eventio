@@ -43,6 +43,14 @@ yarn
 npm install
 ```
 
+Create a `.env` file like the following:
+
+```sh
+APP_NAME="Eventio"
+API_URL="https://testproject-api-v2.strv.com"
+API_KEY="<YOUR API KEY>"
+```
+
 Start the development server:
 
 ```sh
@@ -62,12 +70,38 @@ npm run dev
 - [x] [Redux](http://redux.js.org/) to manage application state
 - [x] [redux-saga](https://redux-saga.js.org) as a middleware to make application side effects easier to manage
 - [x] [redux-act](https://github.com/pauldijou/redux-act) to reduce action creators boilerplate and to have a more expressive syntax for reducers
+- [x] [immer](https://github.com/mweststrate/immer) as a simpler alternative for immutable state
 - [x] Built with [Webpack](https://github.com/webpack/webpack)
 - [x] [Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement) for components, reducers and sagas
 - [x] Transpiled with [Babel](https://babeljs.io/)
 - [x] [styled-components](https://www.styled-components.com/) as a CSS-in-JS strategy
-- [x] [Now](https://zeit.co/now) to deploy production environment
+- [x] [Heroku](https://heroku.com) to deploy production environment
 - [x] [Workbox](https://github.com/GoogleChrome/workbox) to generate service-worker and runtime caching
+
+### Roadmap
+
+- [x] Login and Authorized State
+- [x] Event List
+- [ ] Create Event
+- [x] 404 Page
+- [ ] Sign Up
+- [ ] Reset Password
+- [ ] Event details
+- [ ] My Profile
+
+### A few notes on technical decisions
+
+I tried to balance the following three aspects the most I could when it
+comes to picking to picking the project stack:
+
+- The tech stack [already running at STRV](https://www.strv.com/careers/frontend-developer-react)
+- The tech stack I am already used to
+- The tech that makes sense for the project
+
+Special attention goes to the state management choice: a simpler alternative (e.g. React Hooks + Context API) could have been used instead of redux but two aspects guided me:
+
+- Altough there are uncountable alternatives for redux as 2019, it's still a solid alternative for state managament
+- I was told in the project specification to _treat this app as an MVP of a much larger project that could scale and grow one day_ – and redux does scale well
 
 ## License
 
