@@ -89,7 +89,7 @@ export default class List extends Component<Props, State> {
   };
 
   renderList = () => {
-    const {grid, currentUser} = this.props;
+    const {currentUser} = this.props;
     const {events, view} = this.state;
     const isList = view === ViewTypes.list;
     return (
