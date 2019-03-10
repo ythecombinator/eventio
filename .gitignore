@@ -6,6 +6,7 @@ out/
 NOTES.md
 functions/node_modules
 functions/lib
+!yarn.lock
 
 ### macOS ###
 *.DS_Store
