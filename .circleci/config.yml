@@ -1,0 +1,58 @@
+version: 2
+
+jobs:
+  lint_js:
+    docker:
+      - image: ythecombinator/ci-node
+    steps:
+      - checkout
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - run: yarn lint
+
+  deploy_staging:
+    docker:
+      - image: picter/ci-node
+    steps:
+      - checkout
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - run:
+          name: Build and deploy project
+          command: |
+            yarn build
+            yarn global add now
+            yarn deploy
+    environment:
+      - NOW_ENV: 'stg'
+
+  deploy_production:
+    docker:
+      - image: ythecombinator/ci-node
+    steps:
+      - checkout
+      - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
+      - run:
+          name: Build and deploy project
+          command: |
+            yarn build
+            yarn global add now
+            yarn deploy
+    environment:
+      - NOW_ENV: 'prod'
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - lint_js
+      - deploy_staging:
+          context: eventio
+          filters:
+            branches:
+              only: master
+      - deploy_production:
+          context: eventio
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
