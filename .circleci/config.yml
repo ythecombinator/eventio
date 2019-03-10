@@ -6,15 +6,7 @@ jobs:
       - image: ythecombinator/ci-node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
       - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
-      - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
       - run: yarn lint
 
   deploy_staging:
@@ -22,15 +14,7 @@ jobs:
       - image: picter/ci-node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
       - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
-      - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
       - run:
           name: Build and deploy project
           command: |
@@ -44,15 +28,7 @@ jobs:
       - image: ythecombinator/ci-node
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
       - run: yarn install --ignore-scripts --frozen-lockfile --pure-lockfile
-      - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
       - run:
           name: Build and deploy project
           command: |
@@ -68,15 +44,11 @@ workflows:
       - lint_js
       - deploy_staging:
           context: eventio
-          requires:
-            - lint_js
           filters:
             branches:
               only: master
       - deploy_production:
           context: eventio
-          requires:
-            - lint_js
           filters:
             branches:
               ignore: /.*/
