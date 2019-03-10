@@ -9,7 +9,7 @@ const routes = require('./routes');
 
 const dev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3001;
-const app = next({dev, dir: dev ? 'src' : './'});
+const app = next({dev, dir: dev ? 'src' : './.next'});
 
 const handler = routes.getRequestHandler(app);
 
