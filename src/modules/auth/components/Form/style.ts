@@ -1,7 +1,7 @@
 import {styles} from 'utils/styles';
 import styled, {colors, css} from 'utils/theme';
 
-const {darkGrayishBlue, darkGrayishBlueLighten, lightPink, grayishBlue2} = colors;
+const {grayishBlue2, grayishBlue1, lightPink1} = colors;
 
 const {queries} = styles;
 
@@ -30,13 +30,13 @@ const FormView = styled.form<FormViewProps>`
   }
 
   h1 {
-    color: ${darkGrayishBlue};
+    color: ${grayishBlue2};
     font-size: 22px;
     line-height: 2.18;
   }
 
   p {
-    color: ${(props) => (props.error ? lightPink : darkGrayishBlueLighten)};
+    color: ${(props) => (props.error ? lightPink1 : grayishBlue1)};
     font-size: 14px;
     line-height: 1.71;
   }

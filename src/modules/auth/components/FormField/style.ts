@@ -1,7 +1,7 @@
 import {styles} from 'utils/styles';
 import styled, {colors} from 'utils/theme';
 
-const {darkGrayishBlue, lightGrayishBlue2, grayishBlue2, lightGrayishBlue3, lightPink} = colors;
+const {grayishBlue2, gray2, gray5, gray3, lightPink1} = colors;
 
 const {queries} = styles;
 
@@ -22,18 +22,18 @@ const FormField = styled.div<FormFieldViewProps>`
     width: 100%;
     padding-bottom: 7px;
     background: transparent;
-    color: ${darkGrayishBlue};
+    color: ${grayishBlue2};
     font-family: 'Hind', sans-serif;
     font-size: 18px;
     line-height: 1.33;
     border: none;
-    border-bottom: 1px solid ${(props) => (props.error ? lightPink : lightGrayishBlue2)};
+    border-bottom: 1px solid ${(props) => (props.error ? lightPink1 : gray2)};
 
     + label {
       position: absolute;
       top: 0;
       left: 0;
-      color: ${grayishBlue2};
+      color: ${gray5};
       line-height: 1.5;
       transition: all 0.25s ease-out;
       z-index: -1;
@@ -41,13 +41,13 @@ const FormField = styled.div<FormFieldViewProps>`
 
     &:focus {
       outline: none;
-      border-bottom-color: ${darkGrayishBlue};
+      border-bottom-color: ${grayishBlue2};
 
       + label {
         top: -24px;
         font-size: 14px;
         line-height: 1.71;
-        color: ${lightGrayishBlue3};
+        color: ${gray3};
       }
     }
 
@@ -57,7 +57,7 @@ const FormField = styled.div<FormFieldViewProps>`
         top: -24px;
         font-size: 14px;
         line-height: 1.71;
-        color: ${lightGrayishBlue3};
+        color: ${gray3};
       }`}
   }
 

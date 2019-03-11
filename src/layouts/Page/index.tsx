@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import Head from 'next/head';
 
-import {GlobalStyles, MainView} from './style';
+import {MainView} from './style';
 
 interface Props {
   name: string;
@@ -27,7 +27,6 @@ const Page: FunctionComponent<Props> = (props) => {
 
   return (
     <div>
-      <GlobalStyles />
       <MainView headerGap={headerGap} fullScreen={fullScreen}>
         <Head>
           <title>Eventio | {title}</title>

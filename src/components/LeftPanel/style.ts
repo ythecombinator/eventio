@@ -2,7 +2,7 @@ import {styles} from 'utils/styles';
 import styled from 'utils/theme';
 import {colors} from 'utils/theme';
 
-const {limeGreenLighten, darkGrayishBlue, darkGrayishBlueLighten, white} = colors;
+const {limeGreen1, grayishBlue2, grayishBlue1, white} = colors;
 
 const LeftPanelView = styled.div`
   display: none;
@@ -12,7 +12,7 @@ const LeftPanelView = styled.div`
   left: 0;
   height: 100vh;
   width: 480px;
-  background: url('../static/images/trooper.png'), ${darkGrayishBlue};
+  background: url('../static/images/trooper.png'), ${grayishBlue2};
   background-size: cover, cover;
   text-align: center;
 
@@ -30,7 +30,7 @@ const QuoteBoxView = styled.div`
 
   span {
     display: block;
-    background: ${limeGreenLighten};
+    background: ${limeGreen1};
     width: 12px;
     height: 2px;
     margin: 21px auto 15px auto;
@@ -45,7 +45,7 @@ const QuoteView = styled.p`
 `;
 
 const AuthorView = styled.p`
-  color: ${darkGrayishBlueLighten};
+  color: ${grayishBlue1};
   font-size: 18px;
   line-height: 1.33;
 `;

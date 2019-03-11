@@ -10,7 +10,7 @@ import {filterItem} from 'modules/events/utils';
 import Section from 'layouts/Section';
 
 import EmptyState from './components/EmptyState';
-import {GridView, ListView} from './style';
+import {GridView} from './style';
 import {Provider} from './utils';
 
 const defaultProps = {
@@ -118,10 +118,8 @@ export default class List extends Component<Props, State> {
 
     return (
       <Provider value={providerValue}>
-        <ListView>
-          <Section>{children}</Section>
-          {hasEvents ? this.renderList() : this.renderMessage()}
-        </ListView>
+        <Section>{children}</Section>
+        {hasEvents ? this.renderList() : this.renderMessage()}
       </Provider>
     );
   }

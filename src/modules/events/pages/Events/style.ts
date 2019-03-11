@@ -1,4 +1,4 @@
-import {flexRow} from 'styles/helpers';
+import {flexRow} from 'styles/mixins';
 
 import styled from 'utils/theme';
 

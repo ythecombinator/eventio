@@ -25,7 +25,7 @@ const ButtonView = styled.div`
   }
 
   :hover {
-    color: #323c46;
+    color: ${(props) => props.theme.colors.grayishBlue2};
   }
 
   :hover:after {

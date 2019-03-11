@@ -1,14 +1,14 @@
 import {css} from 'styled-components';
-import {flexRow, text} from 'styles/helpers';
+import {flexRow, text} from 'styles/mixins';
 
-import styled from 'utils/theme';
+import styled, {colors} from 'utils/theme';
 
 const DropDownView = styled.div`
   ${flexRow}
   position: relative;
   font-size: 14px;
   font-weight: 600;
-  color: #9ca5af;
+  color: ${(props) => props.theme.colors.gray10};
   cursor: pointer;
   svg {
     margin-left: 10px;
@@ -31,7 +31,7 @@ const DesktopMenuView = css`
     text-transform: uppercase;
     padding: 0 34px 0 0;
     font-weight: 600;
-    color: #9ca5af;
+    color: ${colors.gray10};
     transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
@@ -40,7 +40,7 @@ const DesktopMenuView = css`
   }
 
   li:hover {
-    color: #cacdd0;
+    color: ${colors.gray13};
   }
 `;
 
@@ -63,7 +63,7 @@ const MobileMenuView = css`
   }
 
   div:hover {
-    color: #323c46;
+    color: ${(props) => props.theme.colors.grayishBlue2};
   }
 `;
 
@@ -87,7 +87,7 @@ interface MenuItemViewProps {
 }
 
 const MenuItemView = styled.li<MenuItemViewProps>`
-  color: ${(props) => props.active && '#323c46'} !important;
+  color: ${(props) => props.active && props.theme.colors.grayishBlue2} !important;
 `;
 
 export {DropDownView, SelectedView, MenuView, MenuItemView};

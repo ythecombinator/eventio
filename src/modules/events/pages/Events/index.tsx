@@ -11,6 +11,8 @@ import {Add} from 'components/Icons';
 import {withLoginCheck} from 'hocs';
 import Page from 'layouts/Page';
 
+import {colors} from 'utils/theme';
+
 import connect, {MappedProps} from './Connector';
 import EventsView from './style';
 
@@ -41,7 +43,7 @@ class Events extends Component<Props> {
               <ToggleLayout />
             </EventsView>
           </List>
-          <FloatingActionButton color="#323C46" onClick={this.redirectToNew}>
+          <FloatingActionButton color={colors.grayishBlue2} onClick={this.redirectToNew}>
             <Add width={14} height={14} color="white" />
           </FloatingActionButton>
         </Page>

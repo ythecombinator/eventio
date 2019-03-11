@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {styles} from 'utils/styles';
 import {colors} from 'utils/theme';
 
-const {veryDarkBlue} = colors;
+const {grayishBlue3} = colors;
 
 const {queries} = styles;
 
@@ -13,7 +13,7 @@ const TrooperImageView = styled.svg`
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
-  fill: ${veryDarkBlue};
+  fill: ${grayishBlue3};
   opacity: 0.06;
   z-index: -1;
   transition: all 0.5s ease-out;

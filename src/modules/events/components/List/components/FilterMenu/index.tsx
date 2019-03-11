@@ -3,6 +3,8 @@ import {EventTypes} from 'modules/events/models';
 
 import {Dropdown} from 'components/Icons';
 
+import {colors} from 'utils/theme';
+
 import {withContext} from '../../utils';
 import {DropDownView, MenuItemView, MenuView, SelectedView} from './style';
 
@@ -64,7 +66,7 @@ class FilterMenu extends Component<Props, State> {
       <DropDownView onClick={this.toggleDropdown}>
         <span>SHOW:</span>
         <SelectedView>{this.state.selected}</SelectedView>
-        <Dropdown width={10} height={5} color="#323C46" />
+        <Dropdown width={10} height={5} color={colors.grayishBlue2} />
         {this.menu()}
       </DropDownView>
     );

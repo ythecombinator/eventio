@@ -1,13 +1,13 @@
 import {styles} from 'utils/styles';
 import styled, {colors} from 'utils/theme';
 
-const {darkGrayishBlueLighten, grayishBlue2} = colors;
+const {grayishBlue1, gray5} = colors;
 
 const {queries} = styles;
 
 const SignUpView = styled.div`
   display: inline-block;
-  color: ${grayishBlue2};
+  color: ${gray5};
   margin-top: 16px;
   cursor: pointer;
   font-size: 14px;
@@ -18,7 +18,7 @@ const SignUpView = styled.div`
   }
 
   strong {
-    color: ${darkGrayishBlueLighten};
+    color: ${grayishBlue1};
     font-weight: 500;
     text-transform: uppercase;
   }

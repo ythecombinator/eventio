@@ -1,6 +1,8 @@
 import React, {FunctionComponent} from 'react';
 import Spinner from 'components/Spinner';
 
+import {colors} from 'utils/theme';
+
 import {ContainerView, EmptyStateView} from './style';
 
 interface Props {
@@ -14,7 +16,7 @@ const EmptyState: FunctionComponent<Props> = (props) => {
     <EmptyStateView>
       <ContainerView>
         {loading ? (
-          <Spinner size={60} color="#1F1F1F" />
+          <Spinner size={60} color={colors.black1} />
         ) : (
           <>
             <img src="/static/images/empty-state.svg" />

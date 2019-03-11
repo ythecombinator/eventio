@@ -1,14 +1,14 @@
-import {flexRow} from 'styles/helpers';
+import {flexRow} from 'styles/mixins';
 
 import styled from 'utils/theme';
 
 const OwnerView = styled.p`
-  color: #7d7878;
+  color: ${(props) => props.theme.colors.gray14};
   font-size: 14px;
 `;
 
 const DateView = styled.span`
-  color: #cacdd0;
+  color: ${(props) => props.theme.colors.gray13};
   font-size: 14px;
   @media (max-width: 1050px) {
     width: 100%;
@@ -17,7 +17,7 @@ const DateView = styled.span`
 
 const AttendeesView = styled.span`
   font-size: 14px;
-  color: #cacdd0;
+  color: ${(props) => props.theme.colors.gray13};
 `;
 
 const InfoView = styled.div`
