@@ -63,6 +63,64 @@ npm run dev
 
 🚀 Head over to [localhost:3001](http://localhost:3001) in your browser of choice.
 
+## Structure
+
+```sh
+|-- components/
+|   |-- Account/
+|   	|-- index.tsx // Main logic
+|   	|-- styles.ts // Styled views
+|   |-- ...
+|-- config/
+|   |-- environment.ts
+|-- core/
+|   |-- rootReducer.ts
+|   |-- rootSaga.ts
+|   |-- store.ts
+|-- hocs/
+|   |-- index.ts
+|   |-- withLoginCheck.tsx
+|   |-- ...
+|-- layouts/
+|   |-- Meta/
+|   |-- index.ts
+|   |-- ...
+|-- modules/
+|   |-- auth/
+|   	|-- components/
+|   	|-- pages/
+|   	|-- actions.ts
+|   	|-- models.ts
+|   	|-- reducers.ts
+|   	|-- sagas.ts
+|   	|-- selectors.ts
+|   	|-- services.ts
+|   |-- ...
+|-- pages/
+|   |-- ...
+|   |-- events.tsx
+|   |-- sign-in.tsx
+|-- static/
+|-- styles/
+|   |-- animations.ts
+|   |-- ...
+|-- utils/
+|   |-- cookies.ts
+|   |-- ...
+```
+
+Where:
+
+- `components/`: Components reused across pages
+- `core/`: Main redux stuff
+- `hocs/`: Reusable HOCs
+- `layouts/`: Reusable Layouts
+- `modules/`: Each isolated functionality, organized into: components; next.js pages; TypeScript interfaces, models and related; Redux reducers, actions, selectors and sagas and API services
+- `pages/`: Pointers to pages from each module
+- `static/`: Next.js static assets
+- `styles/`: Mixins and other styled components stuff
+- `utils/`: Helper functions reusable accross the project
+
 ## Toolbelt
 
 - [x] [Typescript](https://www.typescriptlang.org) for compile-time safety and code scalability with _Interface oriented development_
@@ -88,6 +146,11 @@ npm run dev
 - [ ] Reset Password
 - [ ] Event details
 - [ ] My Profile
+
+Next steps should be:
+
+- Create Event (due from last sprint)
+- Implement each other page according to priority order
 
 ### A few notes on technical decisions
 
