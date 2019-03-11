@@ -1,4 +1,4 @@
-import {centeredContent, container} from 'styles/helpers';
+import {centeredContent, container} from 'styles/mixins';
 
 import styled from 'utils/theme';
 

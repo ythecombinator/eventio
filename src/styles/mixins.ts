@@ -1,5 +1,7 @@
 import {css} from 'styled-components';
 
+import {colors} from 'utils/theme';
+
 const clickable = css`
   cursor: pointer;
 `;
@@ -54,13 +56,13 @@ const container = css`
 
 const text = {
   light: css`
-    color: #949ea8;
+    color: ${colors.grayishBlue1};
   `,
   dark: css`
-    color: #323c46;
+    color: ${colors.grayishBlue2};
   `,
   alert: css`
-    color: #ff4081;
+    color: ${colors.lightPink1};
   `,
 };
 

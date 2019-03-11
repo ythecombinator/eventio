@@ -1,7 +1,7 @@
 import {styles} from 'utils/styles';
 import styled, {colors} from 'utils/theme';
 
-const {darkGrayishBlue, darkGrayishBlueLighten} = colors;
+const {grayishBlue2, grayishBlue1} = colors;
 
 const {queries} = styles;
 
@@ -22,13 +22,13 @@ const ErrorView = styled.div`
     font-size: 22px;
     line-height: 2.18;
     text-align: center;
-    color: ${darkGrayishBlue};
+    color: ${grayishBlue2};
   }
 
   p {
     font-size: 14px;
     line-height: 1.71;
-    color: ${darkGrayishBlueLighten};
+    color: ${grayishBlue1};
   }
 
   @media (min-width: ${queries.mobileL}) {

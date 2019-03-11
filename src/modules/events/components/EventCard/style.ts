@@ -1,5 +1,5 @@
 import {css} from 'styled-components';
-import {flexRow} from 'styles/helpers';
+import {flexRow} from 'styles/mixins';
 
 import styled from 'utils/theme';
 
@@ -23,14 +23,14 @@ const EventCardView = styled.div<EventCardViewProps>`
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.11);
-  color: #949ea8;
+  color: ${(props) => props.theme.colors.grayishBlue1};
   text-align: left;
   transition: box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   ${(props) => props.size === 'big' && EventCardViewBig};
 
   h5 {
-    color: #323c46;
+    color: ${(props) => props.theme.colors.grayishBlue2};
   }
 
   :hover {
@@ -44,7 +44,7 @@ const EventCardView = styled.div<EventCardViewProps>`
 
 const EventCardDateView = styled.p`
   font-size: 14px;
-  color: #cacdd0;
+  color: ${(props) => props.theme.colors.gray13};
 `;
 
 const EventCardLinkView = styled.a`
@@ -58,14 +58,14 @@ const EventCardAboutView = styled.div`
   margin-top: 15px;
   p {
     font-size: 14px;
-    color: #7d7878;
+    color: ${(props) => props.theme.colors.gray14};
   }
 `;
 
 const EventCardDescriptionView = styled.p`
   max-width: 223px;
   margin-top: 15px;
-  color: #949ea8;
+  color: ${(props) => props.theme.colors.grayishBlue1};
 `;
 
 const EventCardFooterView = styled.div`

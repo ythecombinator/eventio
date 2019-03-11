@@ -1,4 +1,4 @@
-import styled, {css} from 'utils/theme';
+import styled, {colors, css} from 'utils/theme';
 
 const ButtonSizes = {
   big: css`
@@ -15,36 +15,36 @@ const ButtonSizes = {
 const ButtonTypes = {
   primary: css`
     color: white;
-    background-color: #22d486;
+    background-color: ${colors.limeGreen5};
     :hover {
-      background-color: #20c77e;
+      background-color: ${colors.limeGreen4};
     }
   `,
   update: css`
-    color: #a9aeb4;
-    background-color: #d9dce1;
+    color: ${colors.gray10};
+    background-color: ${colors.gray6};
     :hover {
-      background-color: #d0d4da;
+      background-color: ${colors.gray11};
     }
   `,
   alert: css`
     color: white;
-    background-color: #ff4081;
+    background-color: ${colors.lightPink1};
     :hover {
-      background-color: #ff3177;
+      background-color: ${colors.lightPink3};
     }
   `,
   disabled: css`
     opacity: 0.5;
     cursor: auto;
-    color: #a9aeb4;
-    background-color: #d9dce1;
+    color: ${colors.gray10};
+    background-color: ${colors.gray6};
   `,
   dark: css`
     color: white;
-    background-color: #323c46;
+    background-color: ${colors.grayishBlue2};
     :hover {
-      background-color: #2c343d;
+      background-color: ${colors.grayishBlue4};
     }
   `,
 };

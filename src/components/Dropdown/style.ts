@@ -1,4 +1,4 @@
-import {hidden} from 'styles/helpers';
+import {hidden} from 'styles/mixins';
 
 import styled from 'utils/theme';
 
@@ -41,12 +41,12 @@ const DropdownView = styled.div<DropdownViewProps>`
   }
 
   a {
-    color: #9ca5af;
+    color: ${(props) => props.theme.colors.gray7};
     display: block;
   }
 
   a:hover {
-    color: #323c46;
+    color: ${(props) => props.theme.colors.grayishBlue2};
   }
 `;
 

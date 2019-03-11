@@ -11,6 +11,9 @@ import {Visibility} from 'components/Icons';
 import LeftPanel from 'components/LeftPanel';
 import RightHeader from 'components/RightHeader';
 import {withLoginCheck} from 'hocs';
+import Page from 'layouts/Page';
+
+import {colors} from 'utils/theme';
 
 import config from 'config/environment';
 
@@ -28,6 +31,11 @@ const initialState = {
 interface Props extends MappedProps {}
 
 type State = typeof initialState;
+
+const pageProps = {
+  name: 'Login',
+  title: 'Login',
+};
 
 class Login extends Component<Props, State> {
   readonly state = initialState;
@@ -62,51 +70,54 @@ class Login extends Component<Props, State> {
   render() {
     const {loading, error} = this.props;
     return (
-      <div>
-        <Head>
-          <title>{appName} | Sign In</title>
-        </Head>
+      <Page {...pageProps}>
+        <div>
+          <LeftPanel />
+          <RightHeader>
+            <SignUpView>
+              <Link href="sign-up">
+                <p>
+                  Don’t have account? <strong>Sign up</strong>
+                </p>
+              </Link>
+            </SignUpView>
+          </RightHeader>
 
-        <LeftPanel />
-        <RightHeader>
-          <SignUpView>
-            <Link href="sign-up">
-              <p>
-                Don’t have account? <strong>Sign up</strong>
-              </p>
-            </Link>
-          </SignUpView>
-        </RightHeader>
+          <Form onSubmit={this.handleOnSubmit} error={error} noValidate headerGap>
+            <h1>Sign in to Eventio.</h1>
+            <p>{error ? error : 'Enter your details below.'}</p>
 
-        <Form onSubmit={this.handleOnSubmit} error={error} noValidate headerGap>
-          <h1>Sign in to Eventio.</h1>
-          <p>{error ? error : 'Enter your details below.'}</p>
+            <FormField value={this.state.email} error={error}>
+              <input
+                name="email"
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+              <label>Email</label>
+            </FormField>
 
-          <FormField value={this.state.email} error={error}>
-            <input
-              name="email"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            <label>Email</label>
-          </FormField>
-
-          <FormField value={this.state.password} error={error}>
-            <input
-              name="password"
-              type={this.getPasswordView()}
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <label>Password</label>
-            <Visibility width={22} height={16} color="#E1E4E6" onClick={this.togglePasswordView} />
-          </FormField>
-          <Button dimensions={ButtonSize.large} color={ButtonColor.primary} loading={loading}>
-            Sign in
-          </Button>
-        </Form>
-      </div>
+            <FormField value={this.state.password} error={error}>
+              <input
+                name="password"
+                type={this.getPasswordView()}
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <label>Password</label>
+              <Visibility
+                width={22}
+                height={16}
+                color={colors.gray9}
+                onClick={this.togglePasswordView}
+              />
+            </FormField>
+            <Button dimensions={ButtonSize.large} color={ButtonColor.primary} loading={loading}>
+              Sign in
+            </Button>
+          </Form>
+        </div>
+      </Page>
     );
   }
 }

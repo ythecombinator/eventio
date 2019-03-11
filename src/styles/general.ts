@@ -11,14 +11,15 @@ const general = css`
   }
 
   body {
-    color: #323c46;
-    background-color: #f9f9fb;
+    color: ${(props) => props.theme.colors.grayishBlue2};
+    background-color: ${(props) => props.theme.gray2};
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
     margin: 0 auto;
     overflow-x: hidden;
   }
+
   @media (max-width: 550px) {
     body {
       text-align: center;
@@ -41,15 +42,17 @@ const general = css`
   }
 
   a {
-    color: #323c46;
+    color: ${(props) => props.theme.colors.grayishBlue2};
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
     transition: color 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
+
   a strong {
     color: currentColor;
   }
+
   strong {
     font-weight: 700;
   }
@@ -58,6 +61,15 @@ const general = css`
     display: block;
     height: auto;
     width: 100%;
+  }
+
+  footer,
+  header,
+  section {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 1rem 0;
   }
 `;
 

@@ -2,7 +2,7 @@ import {styles} from 'utils/styles';
 import styled from 'utils/theme';
 import {colors} from 'utils/theme';
 
-const {darkGrayishBlue, white} = colors;
+const {grayishBlue2, white} = colors;
 
 const LogoView = styled.svg`
   position: absolute;
@@ -10,13 +10,13 @@ const LogoView = styled.svg`
   left: 24px;
   width: 30px;
   height: 30px;
-  fill: ${darkGrayishBlue};
+  fill: ${grayishBlue2};
   z-index: 200;
 
   @media (min-width: ${styles.queries.laptop}) {
     top: 39px;
     left: 61px;
-    fill: ${(props) => (props.color === 'light' ? white : darkGrayishBlue)};
+    fill: ${(props) => (props.color === 'light' ? white : grayishBlue2)};
   }
 `;
 

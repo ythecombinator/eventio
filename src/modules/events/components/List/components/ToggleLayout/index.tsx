@@ -3,6 +3,8 @@ import {ViewTypes} from 'modules/events/models';
 
 import {Grid, List} from 'components/Icons';
 
+import {colors} from 'utils/theme';
+
 import {withContext} from '../../utils';
 import {SwitcherView} from './style';
 
@@ -11,7 +13,7 @@ const renderIcon = withContext((props) => {
   const active = activeView === type;
   return (
     <Icon
-      color={active ? '#323C46' : '#D9DCE1'}
+      color={active ? colors.grayishBlue2 : colors.gray6}
       width={24}
       height={24}
       onClick={() => toggleView(type)}

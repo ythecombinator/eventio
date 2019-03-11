@@ -1,17 +1,6 @@
-import {animations, column, common, content, general, helpers} from 'styles';
-
-import {createGlobalStyle, css} from 'styled-components';
+import {css} from 'styled-components';
 
 import styled from 'utils/theme';
-
-const GlobalStyles = createGlobalStyle`
-  ${animations}
-  ${column}
-  ${common}
-  ${content}
-  ${general}
-  ${helpers}
-`;
 
 const headerGap = css`
   padding-top: 120px;
@@ -98,4 +87,4 @@ const MainView = styled.main<MainViewProps>`
   }
 `;
 
-export {GlobalStyles, MainView};
+export {MainView};

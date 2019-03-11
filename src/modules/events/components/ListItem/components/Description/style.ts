@@ -1,4 +1,4 @@
-import {flexRow} from 'styles/helpers';
+import {flexRow} from 'styles/mixins';
 
 import styled from 'utils/theme';
 
@@ -19,7 +19,7 @@ const WrapperView = styled.a`
 const TitleView = styled.h6``;
 
 const DescriptionView = styled.p`
-  color: #949ea8;
+  color: ${(props) => props.theme.colors.grayishBlue1};
   font-size: 16px;
 `;
 

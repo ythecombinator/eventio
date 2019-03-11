@@ -1,7 +1,9 @@
 import React, {FunctionComponent} from 'react';
 import Head from 'next/head';
 
-import {GlobalStyles, MainView} from './style';
+import Meta from 'layouts/Meta';
+
+import {MainView} from './style';
 
 interface Props {
   name: string;
@@ -27,7 +29,6 @@ const Page: FunctionComponent<Props> = (props) => {
 
   return (
     <div>
-      <GlobalStyles />
       <MainView headerGap={headerGap} fullScreen={fullScreen}>
         <Head>
           <title>Eventio | {title}</title>
@@ -38,6 +39,7 @@ const Page: FunctionComponent<Props> = (props) => {
           <meta property="og:type" content="website" />
           <meta property="og:image" content="www.eventio.image.com" />
         </Head>
+        <Meta />
         {children}
       </MainView>
     </div>

@@ -8,6 +8,7 @@ import {ButtonWithState} from 'components/StatefulButton';
 
 import {format} from 'utils/date';
 import {trim} from 'utils/string';
+import {colors} from 'utils/theme';
 
 import {
   EventCardAboutView,
@@ -72,7 +73,7 @@ const EventCard: FunctionComponent<EventCardProps> = (props) => {
       </Link>
       <EventCardFooterView>
         <EventCardAtendeesView>
-          <UserIcon color="#949EA8" width={16} height={16} />
+          <UserIcon color={colors.gray12} width={16} height={16} />
           <span>
             {attendees.length} of {capacity}
           </span>

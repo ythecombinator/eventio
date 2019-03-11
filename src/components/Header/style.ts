@@ -1,4 +1,4 @@
-import {container} from 'styles/helpers';
+import {container} from 'styles/mixins';
 
 import styled from 'utils/theme';
 
@@ -10,7 +10,7 @@ const HeaderView = styled.header`
   left: 0;
   width: 100%;
   font-size: 15px;
-  color: #949ea8;
+  color: ${(props) => props.theme.colors.grayishBlue1};
 `;
 
 const ContainerView = styled.div`
