@@ -14,10 +14,6 @@ import configureStore from 'core/store';
 
 import {theme} from 'utils/theme';
 
-import config from 'config/environment';
-
-const appName = config.settings.app.name;
-
 interface Props extends WithRouterProps, ProviderProps<AnyAction> {}
 
 class App extends NextApp<Props> {
@@ -36,9 +32,6 @@ class App extends NextApp<Props> {
 
     return (
       <Container>
-        <Head>
-          <title>{appName}</title>
-        </Head>
         <Provider store={store}>
           <ThemeProvider theme={theme}>
             <Layout>

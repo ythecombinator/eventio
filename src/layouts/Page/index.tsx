@@ -1,6 +1,8 @@
 import React, {FunctionComponent} from 'react';
 import Head from 'next/head';
 
+import Meta from 'layouts/Meta';
+
 import {MainView} from './style';
 
 interface Props {
@@ -37,6 +39,7 @@ const Page: FunctionComponent<Props> = (props) => {
           <meta property="og:type" content="website" />
           <meta property="og:image" content="www.eventio.image.com" />
         </Head>
+        <Meta />
         {children}
       </MainView>
     </div>
